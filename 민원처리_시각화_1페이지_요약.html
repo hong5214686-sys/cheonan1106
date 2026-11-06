@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>민원처리 현황 시각화 개선 | 의사결정 요약</title>
+<style>
+:root {color-scheme:light; --ink:#17243b;--muted:#62718a;--line:#dae2ee;--bg:#f4f7fb;--blue:#2357aa;--pale:#eef4fc;--white:#fff;--amber:#8a5b0b}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,'Noto Sans KR','Malgun Gothic',Arial,sans-serif;line-height:1.5}
+.page{max-width:1180px;margin:0 auto;padding:28px 30px 24px}
+header{display:flex;justify-content:space-between;gap:20px;align-items:start;border-bottom:2px solid #244f93;padding-bottom:17px;margin-bottom:18px}
+h1{font-size:26px;line-height:1.25;letter-spacing:-.7px;margin:5px 0 7px;font-weight:800}.eyebrow{font-size:12px;letter-spacing:1.2px;font-weight:800;color:var(--blue)}.subtitle{font-size:14px;color:var(--muted)}
+.status{border:1px solid #cbd9ee;background:#eef4fd;color:#244f93;border-radius:999px;padding:7px 13px;font-size:12px;font-weight:700;white-space:nowrap;margin-top:5px}
+.hero{background:#1e3b67;color:#fff;padding:20px 23px;border-radius:13px;display:grid;grid-template-columns:155px 1fr;align-items:center;gap:18px;margin-bottom:16px}.hero .lead{font-size:12px;opacity:.75;font-weight:700;letter-spacing:.5px}.hero strong{font-size:20px;line-height:1.45;letter-spacing:-.4px}.hero p{font-size:13px;opacity:.9;margin:7px 0 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:15px}.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px 19px;min-width:0}.card h2{font-size:16px;margin:0 0 11px;letter-spacing:-.3px;display:flex;gap:9px;align-items:center}.number{display:inline-grid;place-items:center;background:var(--pale);color:var(--blue);width:26px;height:26px;border-radius:7px;font-size:13px;font-weight:800}
+ul{padding-left:17px;margin:0}li{font-size:13.5px;margin:5px 0}li::marker{color:#6081b2}.muted{color:var(--muted)}
+.actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.action{background:#f1f5fb;border:1px solid #e0e7f2;border-radius:9px;padding:12px 10px;min-height:105px}.action b{display:block;font-size:13px;color:#204b86;margin-bottom:6px}.action span{display:block;font-size:12px;color:#40516b;line-height:1.5}
+.full{grid-column:1/-1}.decision{border-color:#b4c9e9;background:#fff}.decision .items{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.decision .item{border-left:3px solid #3970bb;padding:5px 8px 5px 10px;background:#f8fafe}.decision b{font-size:12.5px;display:block;margin-bottom:5px}.decision p{font-size:12px;color:#5e6e85;margin:0}
+.confirm{background:#fcfcfd}.confirm ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px 18px}.confirm li{font-size:12.5px}.foot{display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:11px;margin-top:8px}.tag{display:inline-block;padding:2px 6px;border-radius:4px;background:#f3f5f8;color:#637188;font-size:10px;font-weight:700;margin-right:4px}
+@media(max-width:780px){.page{padding:18px 14px}.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr;gap:4px}.actions{grid-template-columns:repeat(2,1fr)}.decision .items{grid-template-columns:repeat(2,1fr)}.confirm ul{grid-template-columns:repeat(2,1fr)}header{align-items:start}h1{font-size:23px}}
+@media print{@page{size:A4 landscape;margin:9mm}body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:0;max-width:none}header{margin-bottom:12px;padding-bottom:12px}.hero{margin-bottom:10px;padding:14px 18px}.grid{gap:10px;margin-bottom:10px}.card{padding:12px 14px}.card h2{margin-bottom:7px}.action{min-height:82px;padding:9px}.foot{margin-top:5px}li{margin:3px 0}h1{font-size:23px}}
+</style>
+</head>
+<body>
+<main class="page">
+<header><div><div class="eyebrow">의사결정 요약 · 내부 검토용</div><h1>민원처리 현황 시각화 개선</h1><div class="subtitle">원자료 기반 핵심 사항 요약 | 예산·일정·책임자 미확정</div></div><div class="status">사업 추진계획(안)</div></header>
+<section class="hero" aria-label="왜 필요한가"><div class="lead">WHY · 왜 필요한가</div><div><strong>수작업 취합을 줄이고, 민원 현황을 한눈에 파악</strong><p>월말 보고자료 작성과 반복 재확인 업무를 개선하기 위한 시각화 방안 검토</p></div></section>
+<div class="grid">
+<section class="card"><h2><span class="number">01</span> 현재 문제는 무엇인가 <span class="tag">현황</span></h2><ul><li>여러 파일에서 수치를 복사해 보고자료 작성</li><li>부서별 집계 기준 차이로 재확인 반복</li><li>긴급 민원·장기 미처리 건의 즉시 파악 곤란</li></ul></section>
+<section class="card"><h2><span class="number">02</span> 무엇을 추진하려는가 <span class="tag">제안</span></h2><div class="actions"><div class="action"><b>공통 입력 양식</b><span>부서별 입력·집계 기준 표준화</span></div><div class="action"><b>KPI 자동 계산</b><span>주요 처리 지표 자동 산출</span></div><div class="action"><b>조건별 조회</b><span>부서·상태·긴급도 필터</span></div><div class="action"><b>월별 추이 차트</b><span>민원 처리 흐름 시각화</span></div></div></section>
+<section class="card full decision"><h2><span class="number">03</span> 어떤 결정이 필요한가 <span class="tag">의사결정 필요</span></h2><div class="items"><div class="item"><b>추진 범위</b><p>도입 기능과 구현 수준</p></div><div class="item"><b>구축 방식</b><p>기존 시스템 변경·연계 여부</p></div><div class="item"><b>일정·예산</b><p>착수 시점과 재원</p></div><div class="item"><b>책임 조직</b><p>추진 부서·운영 책임자</p></div><div class="item"><b>관리 기준</b><p>KPI·데이터 관리 원칙</p></div></div></section>
+<section class="card full confirm"><h2><span class="number">04</span> 추가로 확인해야 할 사항 <span class="tag">추가 확인 필요</span></h2><ul><li>구축 일정 및 단계별 기간</li><li>사업 예산과 재원</li><li>추진 담당 부서·운영 책임자</li><li>KPI 항목·계산식</li><li>세부 기능 및 차트 범위</li><li>기존 시스템 변경 필요성</li><li>개인정보 제외·관리 방식</li><li>성과 측정 기준</li></ul></section>
+</div>
+<footer class="foot"><span>적용 제약: 대시보드에 실제 개인정보 미표시 · 기존 시스템 변경 시 별도 검토</span><span>※ 미확인 수치 및 확정되지 않은 효과는 기재하지 않음.</span></footer>
+</main>
+</body></html>
